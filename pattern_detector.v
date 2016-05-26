@@ -38,7 +38,7 @@ module DUT(
         case (state)
             IDLE   :
                 if (data_in)
-                    next = S_1;     
+                    next = S_1;
             S_1    :
                 if (!data_in) 
                     next = S_10; 
@@ -52,12 +52,13 @@ module DUT(
                     next = S_1011;
                 else 
                     next = S_10; 
-
             S_1011 :
                 if (data_in)
                     next = S_1;
                 else
                     next = IDLE;
+          	default :
+            	next = IDLE;  		
         endcase
     end        
 endmodule
